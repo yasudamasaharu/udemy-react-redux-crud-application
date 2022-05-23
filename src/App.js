@@ -1,10 +1,16 @@
 function App() {
+  const greeting = 'Hey';
+  const dom = <h1 className="foo">{greeting} Bob</h1>;
   return (
-    <div>
-      <header>
-        <h1>Hello World!</h1>
-      </header>
-    </div>
+    <>
+      <label htmlFor="bar">bar</label>
+      <input
+        type="text"
+        onChange={() => {
+          console.log('I am Clicked');
+        }}
+      />
+    </>
   );
 }
 
