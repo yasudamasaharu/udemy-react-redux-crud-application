@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import reducer from './reducers';
 import './index.css';
 import EventsIndex from './components/events_index';
+import EventsNew from './components/events_new';
 import reportWebVitals from './reportWebVitals';
 
 const store = createStore(reducer, applyMiddleware(thunk));
@@ -15,7 +17,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <EventsIndex />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/events/new" component={EventsNew} />
+          <Route exact path="/" element={<EventsIndex />} />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );
