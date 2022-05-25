@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import reducer from './reducers';
 import './index.css';
+import reducer from './reducers';
 import EventsIndex from './components/events_index';
 import EventsNew from './components/events_new';
 import reportWebVitals from './reportWebVitals';
@@ -19,7 +19,7 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/events/new" component={EventsNew} />
+          <Route exact path="/events/new" element={<EventsNew />} />
           <Route exact path="/" element={<EventsIndex />} />
         </Routes>
       </BrowserRouter>

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-//combineReducersがreducerを結合する関数
+import { reducer as form } from 'redux-form';
 import events from './events';
 
-export default combineReducers({ events });
+export default combineReducers({ events, form });
